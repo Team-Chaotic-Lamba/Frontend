@@ -8,5 +8,8 @@ export const PageDiv = styled.div`
 `;
 
 export const LoginDiv = styled.div`
+    
     border: 2px solid #3F5C09;
+    width: 500px;
+    height: 800px;
 `;

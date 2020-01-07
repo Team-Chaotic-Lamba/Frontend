@@ -1,11 +1,11 @@
 import React from 'react'
 import Header from './components/header/Header'
-import './App.css'
 import { Route } from 'react-router-dom'
 import GamePage from './components/gamePage/GamePage'
-import { PageDiv } from './components/PageStyles'
 import AboutPage from './components/aboutPage/AboutPage'
 import LoginPage from './components/LoginPage'
+import { PageDiv } from './components/PageStyles'
+import './App.css'
 
 function App() {
     return (
