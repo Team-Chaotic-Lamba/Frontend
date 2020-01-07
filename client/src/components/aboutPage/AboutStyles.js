@@ -6,5 +6,9 @@ export const AboutCards = styled.div`
 `;
 
 export const CardDiv = styled.div`
-    
+    padding: 15px 0px;
+
+    a {
+        padding-left: 5px;
+    }
 `;

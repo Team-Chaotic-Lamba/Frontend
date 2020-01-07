@@ -6,10 +6,10 @@ const AboutCard = (props) =>
     const { name, github, linkedIn, track } = props
     return (
         <CardDiv>
-            <h2>{name}</h2>
-            <h3>{track}</h3>
+            <h3 className='title is-3'>{name}</h3>
+            <h5 className='title is-5'>{track}</h5>
             <a href={github}>Github</a>
-            <a href={linkedIn}>linkedIn</a>
+            <a href={linkedIn}>LinkedIn</a>
         </CardDiv>
     )
 }

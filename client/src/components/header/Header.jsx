@@ -39,16 +39,9 @@ const Header = _ =>
                         activeClassName="selected-navlink"
                         className={'navlink'}
                     >
-                        Login
+                        Login/Register
                     </NavLink>
             }
-            <NavLink 
-                to="/register"
-                activeClassName="selected-navlink"
-                className={'navlink'}
-            >
-                Register
-            </NavLink>
         </HeaderDiv>
     )
 }

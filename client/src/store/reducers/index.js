@@ -63,13 +63,14 @@ export const reducer = (state = initialState, action) =>
             return {
                 ...state,
                 isLoading: false,
-        
+                isLoggedIn: true,
                 error: "",
             }
         case LOGIN_USER_FAIL:
             return {
                 ...state,
                 isLoading: false,
+                isLoggedIn: false,
                 error: action.payload,
             }
         case INITIALIZE_START:

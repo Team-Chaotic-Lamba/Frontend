@@ -1,20 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Header from './components/header/Header'
-import { Route, Redirect } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+import PrivateRoute from './utils/PrivateRoute'
+
+import { PageDiv } from './components/PageStyles'
+import './App.css'
+import 'bulma'
+
+// Pages
 import GamePage from './components/gamePage/GamePage'
 import AboutPage from './components/aboutPage/AboutPage'
 import LoginPage from './components/LoginPage'
-import { PageDiv } from './components/PageStyles'
-import RegistrationPage from './components/RegistrationPage'
-import './App.css'
-
-const PrivateRoute = ({ component: Component, ...rest}) => (
-    <Route {...rest} render={(props) => (
-        localStorage.getItem('token')
-        ? <Component {...props} />
-        : <Redirect to='/' />
-    )} />
-)
 
 function App() {
     return (
@@ -24,7 +20,6 @@ function App() {
                 <PrivateRoute path="/game" component={GamePage} />
                 <Route path="/about" component={AboutPage} />
                 <Route exact path="/" component={LoginPage} />
-                <Route exact path="/register" component={RegistrationPage} />
             </PageDiv>
         </div>
     );
