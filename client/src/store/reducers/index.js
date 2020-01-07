@@ -24,7 +24,8 @@ const initialState = {
     currentRoom: {
         title: "",
         description: "",
-        players: []
+        players: [],
+        items: []
     },
 }
 

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 // import {action} from "../../actions"
 import { GameGrid } from "./GameStyles";
 import MapContainer from "./MapContainer";
-import ChatWindow from "./ChatWindow";
+// import ChatWindow from "./ChatWindow";
 import DescriptionBox from "./DescriptionBox";
 import GameControls from "./GameControls";
 
@@ -15,9 +15,9 @@ const GamePage = _ => {
     <GameGrid>
       <MapContainer />
 
-      {/* <ChatWindow />
+      {/* <ChatWindow /> */}
 
-      <DescriptionBox /> */}
+      <DescriptionBox />
 
       <GameControls />
     </GameGrid>
