@@ -25,7 +25,8 @@ const initialState = {
         title: "",
         description: "",
         players: [],
-        items: []
+        items: [],
+        coords: []
     },
 }
 

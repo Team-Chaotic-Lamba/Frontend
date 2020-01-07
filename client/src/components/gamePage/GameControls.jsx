@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { move } from "../../store/actions";
+import { move, initialize } from "../../store/actions";
 import { DirectionsDiv, DirectionImg } from "./GameStyles";
 
 const GameControls = _ => {
@@ -12,9 +12,14 @@ const GameControls = _ => {
     dispatch(move(direction))
   }
 
+  const handleInit = _ =>
+  {
+      dispatch(initialize())
+  }
+
   return (
     <DirectionsDiv>
-      <p>yo</p>
+      <button onClick={handleInit}>Initialize</button>
       <div style={{alignSelf: "center"}}>
         <DirectionImg src="/images/n.png" alt="north arrow" onClick={_ => handleMove('n')}/>
       </div>
