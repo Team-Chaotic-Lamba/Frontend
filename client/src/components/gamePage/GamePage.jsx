@@ -8,9 +8,10 @@ const GamePage = _ =>
     const state = useSelector(state => state)
 
     return (
-        <>
-            
-        </>
+        <GameGrid>
+            <MapContainer />
+
+        </GameGrid>
     )
 }
 
