@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const HeaderDiv = styled.div`
+    width: 99.6%;
     background-color: #82AA37;
     border: 3px solid #3F5C09;
     border-bottom-right-radius: 4px;

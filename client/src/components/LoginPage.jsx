@@ -1,20 +1,18 @@
 import React from "react"
 import {useSelector, useDispatch} from "react-redux"
 // import {action} from "../../actions"
-import { GameGrid } from './GameStyles'
-import MapContainer from './MapContainer'
+import { LoginDiv } from './PageStyles'
 
-const GamePage = _ =>
+const LoginPage = _ =>
 {
     const dispatch = useDispatch()
     const state = useSelector(state => state)
 
     return (
-        <GameGrid>
-            <MapContainer />
-
-        </GameGrid>
+        <LoginDiv>
+            Placeholder
+        </LoginDiv>
     )
 }
 
-export default GamePage
+export default LoginPage
