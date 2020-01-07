@@ -18,6 +18,7 @@ import {
 
 const initialState = {
     username: "",
+    isLoggedIn: false,
     exploredRooms: [],
     health: 100,
     items: [],
@@ -42,13 +43,14 @@ export const reducer = (state = initialState, action) =>
             return {
                 ...state,
                 isLoading: false,
-                
+                isLoggedIn: true,
                 error: "",
             }
         case REGISTER_USER_FAIL:
             return {
                 ...state,
                 isLoading: false,
+                isLoggedIn: false,
                 error: action.payload,
             }
         case LOGIN_USER_START:
