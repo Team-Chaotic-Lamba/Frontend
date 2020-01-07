@@ -14,14 +14,14 @@ const Header = _ =>
             <NavLink 
                 to="/game"
                 activeClassName="selected-navlink"
-                class={'navlink'}
+                className={'navlink'}
             >
                 Game
             </NavLink>
             <NavLink 
                 to="/about"
                 activeClassName="selected-navlink"
-                class={'navlink'}
+                className={'navlink'}
             >
                 About
             </NavLink>
@@ -29,7 +29,7 @@ const Header = _ =>
                     <NavLink 
                         to="/logout" 
                         activeClassName="selected-navlink" 
-                        class={'navlink'}
+                        className={'navlink'}
                     >
                         Logout
                     </NavLink>
@@ -37,11 +37,18 @@ const Header = _ =>
                     <NavLink 
                         exact to="/"
                         activeClassName="selected-navlink"
-                        class={'navlink'}
+                        className={'navlink'}
                     >
                         Login
                     </NavLink>
             }
+            <NavLink 
+                to="/register"
+                activeClassName="selected-navlink"
+                className={'navlink'}
+            >
+                Register
+            </NavLink>
         </HeaderDiv>
     )
 }

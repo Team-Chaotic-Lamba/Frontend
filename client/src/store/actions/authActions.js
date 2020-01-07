@@ -7,14 +7,14 @@ export const LOGIN_USER_START = "LOGIN_USER_START"
 export const LOGIN_USER_SUCCESS = "LOGIN_USER_SUCCESS"
 export const LOGIN_USER_FAIL = "LOGIN_USER_FAIL"
 
-const backendURL = ""
+const backendURL = "https://teamchaotic.herokuapp.com/api"
 
 export const registerUser = (regInfo, history) => dispatch =>
 {
     dispatch({ type: REGISTER_USER_START })
 
     axios
-        .post(`${backendURL}/register`, regInfo)
+        .post(`${backendURL}/registration/`, regInfo)
         .then(res =>
         {
             console.log('res from registerUser', res)
@@ -34,7 +34,7 @@ export const loginUser = (loginInfo, history) => dispatch =>
     dispatch({ type: LOGIN_USER_START })
 
     axios
-        .post(`${backendURL}/login`, loginInfo)
+        .post(`${backendURL}/login/`, loginInfo)
         .then(res =>
         {
             console.log('res from loginUser', res)

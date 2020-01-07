@@ -1,9 +1,9 @@
 import React, {useState} from "react"
 import {useSelector, useDispatch} from "react-redux"
-import { loginUser } from '../store/actions'
+import { registerUser } from '../store/actions'
 import { LoginDiv } from './PageStyles'
 
-const LoginPage = props =>
+const RegistrationPage = props =>
 {
     const [creds, setCreds] = useState({username: "", email: "", password: ""})
 
@@ -20,7 +20,12 @@ const LoginPage = props =>
     {
         console.log('a')
         e.preventDefault()
-        dispatch(loginUser(creds, props.history))
+        dispatch(registerUser({
+            "username": creds.username,
+            "email": creds.email, 
+            "password1": creds.password,
+            "password2": creds.password}, 
+        props.history))
     }
 
     return (
@@ -38,4 +43,4 @@ const LoginPage = props =>
     )
 }
 
-export default LoginPage
+export default RegistrationPage
