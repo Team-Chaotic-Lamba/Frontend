@@ -14,6 +14,8 @@ import {
     SAY_START,
     SAY_SUCCESS,
     SAY_FAIL,
+    SUBSCRIBE_CHAT_START,
+    SUBSCRIBE_CHAT_SUCCESS,
 } from '../actions'
 
 const initialState = {
@@ -134,6 +136,19 @@ export const reducer = (state = initialState, action) =>
                 ...state,
                 isLoading: false,
                 error: action.payload,
+            }
+        case SUBSCRIBE_CHAT_START:
+            return {
+                ...state,
+                isLoading: true,
+                error: "",
+            }
+        case SUBSCRIBE_CHAT_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                chatMessages: [...state.chatMessages, action.payload],
+                error: "",
             }
         default:
             return state

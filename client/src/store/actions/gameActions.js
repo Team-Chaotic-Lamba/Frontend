@@ -9,6 +9,9 @@ export const MOVE_FAIL = "MOVE_FAIL"
 export const SAY_START = "SAY_START"
 export const SAY_SUCCESS = "SAY_SUCCESS"
 export const SAY_FAIL = "SAY_FAIL"
+export const SUBSCRIBE_CHAT_START = "SUBSCRIBE_CHAT_START"
+export const SUBSCRIBE_CHAT_SUCCESS = "SUBSCRIBE_CHAT_SUCCESS"
+export const SUBSCRIBE_CHAT_FAIL = "SUBSCRIBE_CHAT_FAIL"
 
 // const baseURL = "https://teamchaotic.herokuapp.com/api/adv"
 const baseURL = "https://lambda-mud-test.herokuapp.com/api/adv"
@@ -45,4 +48,10 @@ export const move = direction => dispatch =>
         console.log("err from move:", err)
         dispatch({ type: MOVE_FAIL, payload: err })
     })
+}
+
+export const subscribeToChats = data => dispatch =>
+{
+    dispatch({ type: SUBSCRIBE_CHAT_START })
+    dispatch({ type: SUBSCRIBE_CHAT_SUCCESS, payload: data })
 }
