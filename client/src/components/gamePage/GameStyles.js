@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const GameGrid = styled.div`
-  margin-top: 100px;
+  margin-top: 10px;
   width: 1200px;
   display: grid;
   grid-template-rows: 300px 300px 300px;
@@ -15,11 +15,11 @@ export const MapDiv = styled.div`
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 4;
   display: grid;
   grid-template-columns: repeat(20, 1fr);
   grid-template-rows: repeat(20, 1fr);
-  grid-gap: 4px;
+  /* grid-gap: 4px; */
   background: green;
 `;
 
@@ -41,10 +41,10 @@ export const DirectionsDiv = styled.div`
   align-items: center;
   border-top: 2px solid magenta;
   border-right: 2px solid magenta;
-  grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-start: 4;
+  grid-column-end: 4;
   grid-row-start: 3;
-  grid-row-end: 4;
+  grid-row-end: 3;
   background: black;
   color: white;
 `;
@@ -73,4 +73,36 @@ export const DescriptionDiv = styled.div`
   color: white;
 
 
+`;
+
+export const ChatListDiv = styled.div`
+    display: flex;
+    flex-flow: column nowrap;
+    overflow-y: scroll;
+    /* flex-grow: 10; */
+    width: 90%;
+    height: 90%;
+    
+
+`;
+
+export const ChatP = styled.p`
+    width: 100%
+`;
+
+export const ChatDiv = styled.div`
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+`;
+
+export const ChatBoxDiv = styled.div`
+    width: 100%;
+    height: 10%;
+`;
+
+export const ChatInput = styled.input`
+    width: 98%
 `;

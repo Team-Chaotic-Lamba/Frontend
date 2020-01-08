@@ -22,6 +22,20 @@ const initialState = {
     exploredRooms: [],
     health: 100,
     items: [],
+    chatMessages: [
+        "John said: Go to ele asdfasfd asdfsadfasdf sadfasdfasdf asfdsafas",
+        "Eli said: four spaces ",
+        "John said: Go to ele",
+        "Eli said: four spaces ",
+        "John said: Go to ele",
+        "Eli said: four spaces ",
+        "John said: Go to ele",
+        "Eli said: four spaces ",
+        "John said: Go to ele",
+        "Eli said: four spaces ",
+        "John said: Go to ele",
+        "Eli said: four spaces "
+    ],
     currentRoom: {
         title: "",
         description: "",
