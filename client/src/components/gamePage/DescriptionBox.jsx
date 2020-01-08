@@ -17,8 +17,8 @@ const DescriptionBox = _ =>
         setRoomState({
             title: state.currentRoom.title,
             description: state.currentRoom.description,
-            items: state.currentRoom.items.toString(),
-            players: state.currentRoom.players.toString()
+            items: state.currentRoom.items.join(', '),
+            players: state.currentRoom.players.toString(', ')
         })
     }, [state])
     return (
