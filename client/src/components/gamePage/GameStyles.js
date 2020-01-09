@@ -117,3 +117,36 @@ export const ChatP = styled.p`
 export const ChatDiv = `
 `;
 
+`;
+
+export const ChatListDiv = styled.div`
+    display: flex;
+    flex-flow: column nowrap;
+    overflow-y: scroll;
+    /* flex-grow: 10; */
+    width: 90%;
+    height: 90%;
+    
+
+`;
+
+export const ChatP = styled.p`
+    width: 100%
+`;
+
+export const ChatDiv = styled.div`
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+`;
+
+export const ChatBoxDiv = styled.div`
+    width: 100%;
+    height: 10%;
+`;
+
+export const ChatInput = styled.input`
+    width: 98%
+`;

@@ -14,6 +14,8 @@ import {
     SAY_START,
     SAY_SUCCESS,
     SAY_FAIL,
+    SUBSCRIBE_CHAT_START,
+    SUBSCRIBE_CHAT_SUCCESS,
 } from '../actions'
 
 const initialState = {
@@ -22,6 +24,20 @@ const initialState = {
     exploredRooms: [],
     health: 100,
     items: [],
+    chatMessages: [
+        "John said: Go to ele asdfasfd asdfsadfasdf sadfasdfasdf asfdsafas",
+        "Eli said: four spaces ",
+        "John said: Go to ele",
+        "Eli said: four spaces ",
+        "John said: Go to ele",
+        "Eli said: four spaces ",
+        "John said: Go to ele",
+        "Eli said: four spaces ",
+        "John said: Go to ele",
+        "Eli said: four spaces ",
+        "John said: Go to ele",
+        "Eli said: four spaces "
+    ],
     currentRoom: {
         title: "",
         description: "",
@@ -120,6 +136,19 @@ export const reducer = (state = initialState, action) =>
                 ...state,
                 isLoading: false,
                 error: action.payload,
+            }
+        case SUBSCRIBE_CHAT_START:
+            return {
+                ...state,
+                isLoading: true,
+                error: "",
+            }
+        case SUBSCRIBE_CHAT_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                chatMessages: [...state.chatMessages, action.payload],
+                error: "",
             }
         default:
             return state
