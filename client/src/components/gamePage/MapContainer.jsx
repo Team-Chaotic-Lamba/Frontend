@@ -11,17 +11,18 @@ const MapContainer = _ => {
     { title: "Hot Laboratory", description: "This laboratory is hot, you begin sweating instantly.", coords: "[18, 15]", n_to: "[18,14]", s_to: null, e_to: null, w_to: [17, 14] },
     { title: "Hot Laboratory", description: "This laboratory is hot, you begin sweating instantly.", coords: "[17, 15]", n_to: null, s_to: null, e_to: [19, 14], w_to: null }]
 
+    console.log(state.allRooms)
 
     return (
         <MapDiv>
-            {exploredRooms2.map(el => {
+            {!state.isLoading && state.allRooms.map(el => {
                 let newCoords = el.coords.split('')
                 newCoords.shift()
                 newCoords.pop()
                 newCoords = newCoords.join('')
                 newCoords = newCoords.split(', ')
                 return (
-                    <RoomDiv xCoord={newCoords[0]} yCoord={newCoords[1]}>
+                    <RoomDiv xCoord={newCoords[0]+1} yCoord={newCoords[1]+1} className={`${el.coords}`} key={el.id}>
                         {el.n_to ? (<ConnectImgVertical className='vertical' src="/images/n_connector.png" alt="connector" />) : <EmptyDirection></EmptyDirection>}
                         <div className='middle'>
                             {el.w_to ? (<ConnectImgHorizontal className='horizontal' src="/images/w_connector.png" alt="connector" />) : <EmptyDirection></EmptyDirection>}

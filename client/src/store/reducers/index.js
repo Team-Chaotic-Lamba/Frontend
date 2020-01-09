@@ -105,12 +105,12 @@ export const reducer = (state = initialState, action) =>
             return {
                 ...state,
                 isLoading: false,
-                exploredRooms: action.payload.visited-rooms-ids,
+                // exploredRooms: action.payload.visited-rooms-ids,
                 currentRoom: {
                     title: action.payload.title,
                     description: action.payload.description,
                     players: action.payload.players,
-                    coords: bindActionCreators.payload.coords,
+                    coords: action.payload.coords,
                 },
                 error: "",
             }
@@ -130,7 +130,7 @@ export const reducer = (state = initialState, action) =>
             return {
                 ...state,
                 isLoading: false,
-                allRooms: action.payload,
+                allRooms: action.payload.data,
                 error: "",
             }
         case ROOMS_FAIL:
