@@ -10,12 +10,12 @@ const AboutCard = props => {
       <h5 className="title is-5">{track}</h5>
       <LinkBox>
         <ImgDivGit>
-          <a href={github}>
+          <a href={github} target="_blank" rel="noopener noreferrer">
             <img src="https://i.imgur.com/AGL65ml.png" />
           </a>
         </ImgDivGit>
         <ImgDivLink>
-          <a href={linkedIn}>
+          <a href={linkedIn} target="_blank" rel="noopener noreferrer">
             <img src="https://i.imgur.com/U7X2iES.png" />
           </a>
         </ImgDivLink>
