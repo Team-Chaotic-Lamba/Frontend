@@ -5,7 +5,7 @@ import MapContainer from "./MapContainer";
 import ChatWindow from "./ChatWindow";
 import DescriptionBox from "./DescriptionBox";
 import GameControls from "./GameControls";
-import { initialize } from "../../store/actions";
+import { initialize, getRooms } from "../../store/actions";
 
 const GamePage = _ => {
     const dispatch = useDispatch();
@@ -14,6 +14,7 @@ const GamePage = _ => {
     useEffect(_ =>
     {
         dispatch(initialize())
+        dispatch(getRooms())
     }, [])
 
     return (

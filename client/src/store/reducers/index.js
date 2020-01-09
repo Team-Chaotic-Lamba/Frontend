@@ -8,6 +8,9 @@ import {
     INITIALIZE_START,
     INITIALIZE_SUCCESS,
     INITIALIZE_FAIL,
+    ROOMS_START,
+    ROOMS_SUCCESS,
+    ROOMS_FAIL,
     MOVE_START,
     MOVE_SUCCESS,
     MOVE_FAIL,
@@ -22,6 +25,7 @@ const initialState = {
     username: "",
     isLoggedIn: false,
     exploredRooms: [],
+    allRooms: [],
     health: 100,
     items: [],
     chatMessages: [
@@ -101,10 +105,12 @@ export const reducer = (state = initialState, action) =>
             return {
                 ...state,
                 isLoading: false,
+                exploredRooms: action.payload.data.visited_room_ids,
                 currentRoom: {
-                    title: action.payload.title,
-                    description: action.payload.description,
-                    players: action.payload.players
+                    title: action.payload.data.title,
+                    description: action.payload.data.description,
+                    players: action.payload.data.players,
+                    coords: action.payload.data.coords,
                 },
                 error: "",
             }
@@ -113,6 +119,25 @@ export const reducer = (state = initialState, action) =>
                 ...state,
                 isLoading: false,
                 error: action.payload,
+            }
+        case ROOMS_START:
+            return {
+                ...state,
+                isLoading: true,
+                error: "",
+            }
+        case ROOMS_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                allRooms: action.payload.data,
+                error: "",
+            }
+        case ROOMS_FAIL:
+            return {
+                ...state,
+                isLoading: false,
+                error: action.payload
             }
         case MOVE_START:
             return {
@@ -125,9 +150,9 @@ export const reducer = (state = initialState, action) =>
                 ...state,
                 isLoading: false,
                 currentRoom: {
-                    title: action.payload.title,
-                    description: action.payload.description,
-                    players: action.payload.players
+                    title: action.payload.data.title,
+                    description: action.payload.data.description,
+                    players: action.payload.data.players
                 },
                 error: "",
             }
