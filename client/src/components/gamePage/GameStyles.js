@@ -116,12 +116,18 @@ export const DescriptionDiv = styled.div`
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-between;
-    background: blue;
+    background: black;
     grid-column-start: 4;
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 2;
-    color: white;
+    color: yellow;
+    padding: 5px;
+`;
+
+export const RoomH3 = styled.h3`
+    font-weight: bold;
+    font-size: 20px;
 `;
 
 
