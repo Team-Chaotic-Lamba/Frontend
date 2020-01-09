@@ -11,14 +11,14 @@ export const GameGrid = styled.div`
   /* overflow: hidden; */
 `;
 export const MapDiv = styled.div`
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 4;
-    display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(20, 1fr);
-    background: green;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  grid-template-rows: repeat(30, 1fr);
+  background: green;
 `;
 
 export const ConnectImgVertical = styled.img`
@@ -34,39 +34,43 @@ export const ConnectImgHorizontal = styled.img`
 `
 
 export const RoomDiv = styled.div`
-    grid-column-start: ${props => props.xCoord};
-    grid-row-start: ${props => props.yCoord};
+  grid-column-start: ${props => props.xCoord};
+  grid-row-start: ${props => props.yCoord};
 
-    .room {
-        width: 31px;
-        height: 31px;
-    }
+  .room {
+    width: 20px;
+    height: 20px;
+  }
 
-    height: 45px;
-    width: 45px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    .middle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    }
+  .middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+      .vertical {
+        width: 7px;
+        height: 5px;
+      }
 
-    .connector {
-        height: 6.5px;
-        width: 7.5px;
-        
-    }
+      .horizontal {
+        height: 7px;
+        width: 5px;
+      }
 `;
 
 export const EmptyDirection = styled.div`
-    height: 6.5px;
-    width: 6.5px;
-    background-color: transparent;
-`;
+  height: 5px;
+  width: 5px;
+  background-color: transparent;
+`
+;
 
 export const DirectionsDiv = styled.div`
     display: flex;
@@ -92,7 +96,6 @@ export const DirectionImg = styled.img`
 `;
 
 export const DescriptionDiv = styled.div`
-    border: 4px solid red;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
