@@ -8,17 +8,17 @@ export const GameGrid = styled.div`
     grid-template-columns: 300px 300px 300px 300px;
     border: 2px solid black;
     border-radius: 6px;
-  /* overflow: hidden; */
+    overflow: hidden;
 `;
 export const MapDiv = styled.div`
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 4;
-  display: grid;
-  grid-template-columns: repeat(30, 1fr);
-  grid-template-rows: repeat(30, 1fr);
-  background: green;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    display: grid;
+    grid-template-columns: repeat(30, 1fr);
+    grid-template-rows: repeat(30, 1fr);
+    background: green;
 `;
 
 export const ConnectImgVertical = styled.img`
@@ -34,43 +34,45 @@ export const ConnectImgHorizontal = styled.img`
 `
 
 export const RoomDiv = styled.div`
-  grid-column-start: ${props => props.xCoord};
-  grid-row-start: ${props => props.yCoord};
+    grid-column-start: ${props => props.xCoord};
+    grid-row-start: ${props => props.yCoord};
 
-  .room {
-    width: 20px;
-    height: 20px;
-  }
+    .room {
+        width: 20px;
+        height: 20px;
+    }
 
-  height: 30px;
-  width: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-  .middle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  }
-      .vertical {
-        width: 7px;
-        height: 5px;
-      }
+    .middle 
+    {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+        .vertical 
+        {
+            width: 7px;
+            height: 5px;
+        }
 
-      .horizontal {
-        height: 7px;
-        width: 5px;
-      }
+        .horizontal 
+        {
+            height: 7px;
+            width: 5px;
+        }
 `;
 
 export const EmptyDirection = styled.div`
-  height: 5px;
-  width: 5px;
-  background-color: transparent;
-`
-;
+    height: 5px;
+    width: 5px;
+    background-color: transparent;
+`;
 
 export const DirectionsDiv = styled.div`
     display: flex;
