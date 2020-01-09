@@ -30,6 +30,9 @@ export {
     SAY_START,
     SAY_SUCCESS,
     SAY_FAIL,
+    SUBSCRIBE_CHAT_START,
+    SUBSCRIBE_CHAT_SUCCESS,
+    subscribeToChats,
     initialize,
     move
 } from './gameActions'
