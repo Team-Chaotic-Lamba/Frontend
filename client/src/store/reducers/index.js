@@ -47,7 +47,13 @@ const initialState = {
         description: "",
         players: [],
         items: [],
-        coords: []
+        coords: [],
+        exits: {
+            n_to: null,
+            s_to: null,
+            e_to: null,
+            w_to: null
+        }
     },
 }
 
@@ -111,6 +117,12 @@ export const reducer = (state = initialState, action) =>
                     description: action.payload.data.description,
                     players: action.payload.data.players,
                     coords: action.payload.data.coords,
+                    exits: {
+                        n_to: action.payload.data.n_to,
+                        s_to: action.payload.data.s_to,
+                        e_to: action.payload.data.e_to,
+                        w_to: action.payload.data.w_to,
+                    }
                 },
                 error: "",
             }
@@ -152,7 +164,13 @@ export const reducer = (state = initialState, action) =>
                 currentRoom: {
                     title: action.payload.data.title,
                     description: action.payload.data.description,
-                    players: action.payload.data.players
+                    players: action.payload.data.players,
+                    exits: {
+                        n_to: action.payload.data.n_to,
+                        s_to: action.payload.data.s_to,
+                        e_to: action.payload.data.e_to,
+                        w_to: action.payload.data.w_to,
+                    }
                 },
                 error: "",
             }
