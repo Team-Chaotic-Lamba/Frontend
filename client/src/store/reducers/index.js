@@ -105,12 +105,12 @@ export const reducer = (state = initialState, action) =>
             return {
                 ...state,
                 isLoading: false,
-                // exploredRooms: action.payload.visited-rooms-ids,
+                exploredRooms: action.payload.data.visited_room_ids,
                 currentRoom: {
-                    title: action.payload.title,
-                    description: action.payload.description,
-                    players: action.payload.players,
-                    coords: action.payload.coords,
+                    title: action.payload.data.title,
+                    description: action.payload.data.description,
+                    players: action.payload.data.players,
+                    coords: action.payload.data.coords,
                 },
                 error: "",
             }
