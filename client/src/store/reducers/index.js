@@ -182,7 +182,7 @@ export const reducer = (state = initialState, action) =>
             return {
                 ...state,
                 isLoading: false,
-                chatMessages: [...state.chatMessages, action.payload],
+                chatMessages: [...state.chatMessages, `${action.payload.data.name} said: ${action.payload.data.message}`],
                 error: "",
             }
         default:
