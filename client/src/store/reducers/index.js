@@ -24,6 +24,8 @@ import {
 const initialState = {
     username: "",
     isLoggedIn: false,
+    isLoadingPlayer: false,
+    isLoadingRooms: false,
     exploredRooms: [],
     allRooms: [],
     health: 100,
@@ -98,13 +100,13 @@ export const reducer = (state = initialState, action) =>
         case INITIALIZE_START:
             return {
                 ...state,
-                isLoading: true,
+                isLoadingPlayer: true,
                 error: "",
             }
         case INITIALIZE_SUCCESS:
             return {
                 ...state,
-                isLoading: false,
+                isLoadingPlayer: false,
                 exploredRooms: action.payload.data.visited_room_ids,
                 currentRoom: {
                     title: action.payload.data.title,
@@ -117,26 +119,26 @@ export const reducer = (state = initialState, action) =>
         case INITIALIZE_FAIL:
             return {
                 ...state,
-                isLoading: false,
+                isLoadingPlayer: false,
                 error: action.payload,
             }
         case ROOMS_START:
             return {
                 ...state,
-                isLoading: true,
+                isLoadingRooms: true,
                 error: "",
             }
         case ROOMS_SUCCESS:
             return {
                 ...state,
-                isLoading: false,
+                isLoadingRooms: false,
                 allRooms: action.payload.data,
                 error: "",
             }
         case ROOMS_FAIL:
             return {
                 ...state,
-                isLoading: false,
+                isLoadingRooms: false,
                 error: action.payload
             }
         case MOVE_START:
