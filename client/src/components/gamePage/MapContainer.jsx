@@ -7,7 +7,7 @@ const MapContainer = _ => {
     const state = useSelector(state => state);
     // console.log(state.currentRoom.coords)
     let playerCoords
-    if(state.currentRoom.coords.length > 0) {
+    if(state.currentRoom.coords && state.currentRoom.coords.length > 0) {
         console.log(state.currentRoom.coords, 'true')
         playerCoords = state.currentRoom.coords.split('')
         playerCoords.shift()
@@ -20,7 +20,7 @@ const MapContainer = _ => {
         <MapDiv>
             {!state.isLoadingRooms && !state.isLoadingPlayer &&
             <>
-                {state.currentRoom.coords.length > 0 && <PlayerDiv xCoord={Number(playerCoords[0]) + 1 } yCoord={Number(playerCoords[1]) + 1}>
+                {state.currentRoom.coords && state.currentRoom.coords.length > 0 && <PlayerDiv xCoord={Number(playerCoords[0]) + 1 } yCoord={Number(playerCoords[1]) + 1}>
                     <div className='player'></div>
                 </PlayerDiv>}
                 {!state.isLoadingRooms && state.allRooms.map(el => {

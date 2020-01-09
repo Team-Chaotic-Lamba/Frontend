@@ -30,20 +30,7 @@ const initialState = {
     allRooms: [],
     health: 100,
     items: [],
-    chatMessages: [
-        "John said: Go to ele asdfasfd asdfsadfasdf sadfasdfasdf asfdsafas",
-        "Eli said: four spaces ",
-        "John said: Go to ele",
-        "Eli said: four spaces ",
-        "John said: Go to ele",
-        "Eli said: four spaces ",
-        "John said: Go to ele",
-        "Eli said: four spaces ",
-        "John said: Go to ele",
-        "Eli said: four spaces ",
-        "John said: Go to ele",
-        "Eli said: four spaces "
-    ],
+    chatMessages: [],
     currentRoom: {
         title: "",
         description: "",
@@ -160,6 +147,7 @@ export const reducer = (state = initialState, action) =>
                 error: "",
             }
         case MOVE_SUCCESS:
+            console.log('action.payload.data', action.payload.data)
             return {
                 ...state,
                 isLoading: false,
@@ -167,6 +155,7 @@ export const reducer = (state = initialState, action) =>
                     title: action.payload.data.title,
                     description: action.payload.data.description,
                     players: action.payload.data.players,
+                    coords: action.payload.data.coords,
                     exits: {
                         n_to: action.payload.data.n_to,
                         s_to: action.payload.data.s_to,
