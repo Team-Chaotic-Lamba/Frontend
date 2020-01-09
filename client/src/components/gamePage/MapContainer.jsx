@@ -6,6 +6,7 @@ import { MapDiv, ConnectImgHorizontal, ConnectImgVertical, RoomDiv, EmptyDirecti
 const MapContainer = _ => {
     const state = useSelector(state => state);
 
+
     return (
         <MapDiv>
             <div className='player'></div>
