@@ -1,27 +1,29 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-// import {action} from "../../actions"
+import React, {useEffect} from "react";
+import { useDispatch } from "react-redux";
 import { GameGrid } from "./GameStyles";
 import MapContainer from "./MapContainer";
 import ChatWindow from "./ChatWindow";
 import DescriptionBox from "./DescriptionBox";
 import GameControls from "./GameControls";
+import { initialize } from "../../store/actions";
 
 const GamePage = _ => {
-  const dispatch = useDispatch();
-  const state = useSelector(state => state);
+    const dispatch = useDispatch();
+    // const state = useSelector(state => state);
 
-  return (
-    <GameGrid>
-      <MapContainer />
+    useEffect(_ =>
+    {
+        dispatch(initialize())
+    }, [])
 
-      <ChatWindow />
-
-      <DescriptionBox />
-
-      <GameControls />
-    </GameGrid>
-  );
+    return (
+        <GameGrid>
+            <MapContainer />
+            <ChatWindow />
+            <DescriptionBox />
+            <GameControls />
+        </GameGrid>
+    );
 };
 
 export default GamePage;

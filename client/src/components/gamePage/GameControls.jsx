@@ -12,14 +12,14 @@ const GameControls = _ => {
         dispatch(move(direction))
     }
 
-    const handleInit = _ =>
-    {
-        dispatch(initialize())
-    }
+    // const handleInit = _ =>
+    // {
+    //     dispatch(initialize())
+    // }
 
     return (
         <DirectionsDiv>
-        <button onClick={handleInit}>Initialize</button>
+        {/* <button onClick={handleInit}>Initialize</button> */}
         <div style={{alignSelf: "center"}}>
             <DirectionImg src="/images/n.png" alt="north arrow" onClick={_ => handleMove('n')}/>
         </div>
