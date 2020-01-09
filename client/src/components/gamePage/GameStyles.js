@@ -16,9 +16,9 @@ export const MapDiv = styled.div`
     grid-row-start: 1;
     grid-row-end: 4;
     display: grid;
-    grid-template-columns: repeat(30, 1fr);
-    grid-template-rows: repeat(30, 1fr);
-    background: green;
+    grid-template-columns: repeat(24, 1fr);
+    grid-template-rows: repeat(24, 1fr);
+    background: brown;
 `;
 
 export const ConnectImgVertical = styled.img`
@@ -38,12 +38,11 @@ export const RoomDiv = styled.div`
     grid-row-start: ${props => props.yCoord};
 
     .room {
-        width: 20px;
-        height: 20px;
+        width: 27.5px;
+        height: 27.5px;
     }
-
-    height: 30px;
-    width: 30px;
+    height: 37.5px;
+    width: 37.5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,13 +56,13 @@ export const RoomDiv = styled.div`
     }
         .vertical 
         {
-            width: 7px;
+            width: 7.5px;
             height: 5px;
         }
 
         .horizontal 
         {
-            height: 7px;
+            height: 7.5px;
             width: 5px;
         }
 `;
