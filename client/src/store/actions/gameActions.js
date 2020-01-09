@@ -13,8 +13,8 @@ export const SUBSCRIBE_CHAT_START = "SUBSCRIBE_CHAT_START"
 export const SUBSCRIBE_CHAT_SUCCESS = "SUBSCRIBE_CHAT_SUCCESS"
 export const SUBSCRIBE_CHAT_FAIL = "SUBSCRIBE_CHAT_FAIL"
 
-// const baseURL = "https://teamchaotic.herokuapp.com/api/adv"
-const baseURL = "https://lambda-mud-test.herokuapp.com/api/adv"
+const baseURL = "https://teamchaotic.herokuapp.com/api/adv"
+// const baseURL = "https://lambda-mud-test.herokuapp.com/api/adv"
 
 export const initialize = _ => dispatch =>
 {

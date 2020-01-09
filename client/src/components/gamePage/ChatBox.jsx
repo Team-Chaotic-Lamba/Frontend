@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import { ChatBoxDiv, ChatInput } from './GameStyles'
 import { useSelector } from 'react-redux'
+import { axiosWithAuth } from '../../utils/axiosWithAuth'
 
 const ChatBox = _ =>
 {

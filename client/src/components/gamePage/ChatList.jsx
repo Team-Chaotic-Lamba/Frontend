@@ -1,7 +1,8 @@
 import React, {useEffect} from "react"
 import {useSelector, useDispatch} from "react-redux"
-import { subscribeToChats } from "../../actions"
+import { subscribeToChats } from "../../store/actions"
 import { ChatP, ChatListDiv } from './GameStyles'
+import Pusher from 'pusher-js'
 
 const ChatList = _ =>
 {
