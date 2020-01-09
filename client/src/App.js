@@ -4,8 +4,8 @@ import { Route } from 'react-router-dom'
 import PrivateRoute from './utils/PrivateRoute'
 
 import { PageDiv } from './components/PageStyles'
-import './App.css'
 import 'bulma'
+import './App.css'
 
 // Pages
 import GamePage from './components/gamePage/GamePage'
