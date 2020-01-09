@@ -3,6 +3,9 @@ import { axiosWithAuth } from '../../utils/axiosWithAuth'
 export const INITIALIZE_START = "INITIALIZE_START"
 export const INITIALIZE_SUCCESS = "INITIALIZE_SUCCESS"
 export const INITIALIZE_FAIL = "INITIALIZE_FAIL"
+export const ROOMS_START = "ROOMS_START"
+export const ROOMS_SUCCESS = "ROOMS_SUCCESS"
+export const ROOMS_FAIL = "ROOMS_FAIL"
 export const MOVE_START = "MOVE_START"
 export const MOVE_SUCCESS = "MOVE_SUCCESS"
 export const MOVE_FAIL = "MOVE_FAIL"
@@ -30,6 +33,22 @@ export const initialize = _ => dispatch =>
     {
         console.log("err from initialize:", err)
         dispatch({ type: INITIALIZE_FAIL, payload: err })
+    })
+}
+
+export const getRooms = _ => dispatch => {
+    dispatch({ type: ROOMS_START })
+
+    axiosWithAuth().get(`${baseURL}/rooms`)
+    .then(res =>
+    {
+        console.log("res from rooms:", res)
+        dispatch({ type: ROOMS_SUCCESS, payload: res })
+    })
+    .catch(err =>
+    {
+        console.log("err from rooms:", err)
+        dispatch({ type: ROOMS_FAIL, payload: err })
     })
 }
 

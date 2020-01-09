@@ -24,6 +24,9 @@ export {
     INITIALIZE_START,
     INITIALIZE_SUCCESS,
     INITIALIZE_FAIL,
+    ROOMS_START,
+    ROOMS_SUCCESS,
+    ROOMS_FAIL,
     MOVE_START,
     MOVE_SUCCESS,
     MOVE_FAIL,
@@ -34,5 +37,6 @@ export {
     SUBSCRIBE_CHAT_SUCCESS,
     subscribeToChats,
     initialize,
+    getRooms,
     move
 } from './gameActions'
