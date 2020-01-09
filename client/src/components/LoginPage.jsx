@@ -27,7 +27,7 @@ const LoginPage = props =>
 
     return (
         <OnboardingDiv>
-            <div class='tabs'>
+            <div className='tabs'>
                 <ul>
                     <li className={tabContent === 'login' ? 'is-active' : ''}>
                         <button className='button' onClick={() => setTabContent('login')}>Login</button>
@@ -53,7 +53,7 @@ const LoginPage = props =>
                         </form>
                     </LoginDiv>
                 : 
-                    <RegistrationPage/>
+                    <RegistrationPage history={props.history} />
             }
         </OnboardingDiv>
     )
