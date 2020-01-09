@@ -15,18 +15,18 @@ const DescriptionBox = _ =>
     {
         console.log('b')
         setRoomState({
-            title: state.currentRoom.title,
-            description: state.currentRoom.description,
-            items: state.currentRoom.items.join(', '),
-            players: state.currentRoom.players.toString(', ')
+            // title: state.currentRoom.title,
+            // description: state.currentRoom.description,
+            // items: state.currentRoom.items.join(', '),
+            // players: state.currentRoom.players.toString(', ')
         })
     }, [state])
     return (
         <DescriptionDiv>
-            <h3>{roomState.title}</h3>
+            {/* <h3>{roomState.title}</h3>
             <p>{roomState.description}</p>
             {roomState.items && <p>{`The room contains ${roomState.items}.`}</p>}
-            {roomState.players && <p>{`Present in the room: ${roomState.players}.`}</p>}
+            {roomState.players && <p>{`Present in the room: ${roomState.players}.`}</p>} */}
         </DescriptionDiv>
     )
 }

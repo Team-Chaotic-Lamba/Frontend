@@ -10,7 +10,6 @@ export const GameGrid = styled.div`
   border-radius: 6px;
   /* overflow: hidden; */
 `;
-
 export const MapDiv = styled.div`
   grid-column-start: 1;
   grid-column-end: 4;
@@ -19,20 +18,55 @@ export const MapDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(20, 1fr);
   grid-template-rows: repeat(20, 1fr);
-  /* grid-gap: 4px; */
   background: green;
 `;
 
-export const ConnectImg = styled.img`
+export const ConnectImgVertical = styled.img`
   position: relative;
-  left: 50%;
+  /* left: 50%; */
   top: 0;
 `;
+
+export const ConnectImgHorizontal = styled.img`
+  position: relative;
+  /* left: 50%; */
+  top: 0;
+`
 
 export const RoomDiv = styled.div`
   grid-column-start: ${props => props.xCoord};
   grid-row-start: ${props => props.yCoord};
+
+  .room {
+    width: 31px;
+    height: 31px;
+  }
+
+  height: 45px;
+  width: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+  .connector {
+    height: 6.5px;
+    width: 7.5px;
+    
+  }
 `;
+
+export const EmptyDirection = styled.div`
+  height: 6.5px;
+  width: 6.5px;
+  background-color: transparent;
+`
 
 export const DirectionsDiv = styled.div`
   display: flex;
@@ -55,9 +89,7 @@ export const DirectionImg = styled.img`
   margin-left: 0;
   width: 70px;
   height: 70px;
-  
 `;
-
 
 export const DescriptionDiv = styled.div`
   border: 4px solid red;
@@ -71,7 +103,19 @@ export const DescriptionDiv = styled.div`
   grid-row-start: 1;
   grid-row-end: 2;
   color: white;
+`;
 
+export const ChatListDiv = styled.div`
+    display: flex;
+    flex-flow: column nowrap;
+    overflow-y: scroll;
+`;
+
+export const ChatP = styled.p`
+`;
+
+export const ChatDiv = `
+`;
 
 `;
 

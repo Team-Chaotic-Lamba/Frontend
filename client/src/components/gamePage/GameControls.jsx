@@ -19,6 +19,7 @@ const GameControls = _ => {
 
     return (
         <DirectionsDiv>
+        <button onClick={handleInit}>Initialize</button>
         <div style={{alignSelf: "center"}}>
             <DirectionImg src="/images/n.png" alt="north arrow" onClick={_ => handleMove('n')}/>
         </div>
