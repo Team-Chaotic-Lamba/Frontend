@@ -1,6 +1,6 @@
 import React, {useEffect} from "react"
 import { useSelector } from 'react-redux'
-import { DescriptionDiv } from './GameStyles'
+import { DescriptionDiv, RoomH3 } from './GameStyles'
 
 const DescriptionBox = _ =>
 {
@@ -35,10 +35,14 @@ const DescriptionBox = _ =>
         <DescriptionDiv>
             {!state.isLoadingPlayer &&
                 <>
-                {state.currentRoom.title && <h3>{state.currentRoom.title}</h3>}
+                {state.currentRoom.title && <RoomH3>{state.currentRoom.title}</RoomH3>}
                 {state.currentRoom.description && <p>{state.currentRoom.description}</p>}
                 {/* {state.currentRoom.items && <p>{`The room contains ${state.currentRoom.items}.`}</p>} */}
-                {/* <p>{`There are exits to the ${state.currentRoom.exitString}`}</p> */}
+                <p>{`There are exits to the ${
+                    Object.keys(state.currentRoom.exits)
+                    .map(el => {return state.currentRoom.exits[el] ? dirDict[el] : ''})
+                    .filter(el => el)
+                    .join(', ')}.`}</p>
                 {state.currentRoom.players.length > 0 && <p>{`Present in the room: ${state.currentRoom.players.join(', ')}.`}</p>}
                 </>
             }
