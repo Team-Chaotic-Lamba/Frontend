@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {useSelector, useDispatch} from "react-redux"
+import {useDispatch} from "react-redux"
 import { loginUser } from '../store/actions'
 import { LoginDiv, OnboardingDiv } from './PageStyles'
 import RegistrationPage from "./RegistrationPage"
@@ -10,7 +10,7 @@ const LoginPage = props =>
     const [tabContent, setTabContent] = useState('login')
 
     const dispatch = useDispatch()
-    const state = useSelector(state => state)
+    // const state = useSelector(state => state)
 
     const handleChange = e =>
     {
