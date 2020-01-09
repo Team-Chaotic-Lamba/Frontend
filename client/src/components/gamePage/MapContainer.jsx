@@ -7,6 +7,7 @@ const MapContainer = _ => {
     const dispatch = useDispatch();
     const state = useSelector(state => state);
 
+
     return (
         <MapDiv>
             <div className='player'></div>

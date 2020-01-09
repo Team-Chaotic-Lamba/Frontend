@@ -13,20 +13,20 @@ const DescriptionBox = _ =>
     })
     useEffect(_ =>
     {
-        console.log('b')
+        console.log(`cur room: ${state.currentRoom.title}`)
         setRoomState({
-            // title: state.currentRoom.title,
-            // description: state.currentRoom.description,
+            title: state.currentRoom.title,
+            description: state.currentRoom.description,
             // items: state.currentRoom.items.join(', '),
-            // players: state.currentRoom.players.toString(', ')
+            players: state.currentRoom.players ? state.currentRoom.players.toString(', ') : ''
         })
     }, [state])
     return (
         <DescriptionDiv>
-            {/* <h3>{roomState.title}</h3>
-            <p>{roomState.description}</p>
-            {roomState.items && <p>{`The room contains ${roomState.items}.`}</p>}
-            {roomState.players && <p>{`Present in the room: ${roomState.players}.`}</p>} */}
+            {roomState.title && <h3>{roomState.title}</h3>}
+            {roomState.description && <p>{roomState.description}</p>}
+            {/* {roomState.items && <p>{`The room contains ${roomState.items}.`}</p>} */}
+            {roomState.players && <p>{`Present in the room: ${roomState.players}.`}</p>}
         </DescriptionDiv>
     )
 }

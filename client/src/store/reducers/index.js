@@ -150,9 +150,9 @@ export const reducer = (state = initialState, action) =>
                 ...state,
                 isLoading: false,
                 currentRoom: {
-                    title: action.payload.title,
-                    description: action.payload.description,
-                    players: action.payload.players
+                    title: action.payload.data.title,
+                    description: action.payload.data.description,
+                    players: action.payload.data.players
                 },
                 error: "",
             }
