@@ -32,6 +32,21 @@ export const ConnectImgHorizontal = styled.img`
     /* left: 50%; */
     top: 0;
 `
+export const PlayerDiv = styled.div`
+  grid-column-start: ${props => props.xCoord};
+  grid-row-start: ${props => props.yCoord};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .player {
+    height: 15px;
+    width: 15px;
+    background: yellow;
+    z-index: 10;
+    border-radius: 100%;
+  }
+`
 
 export const RoomDiv = styled.div`
     grid-column-start: ${props => props.xCoord};
