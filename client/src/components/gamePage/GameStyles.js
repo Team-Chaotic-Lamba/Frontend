@@ -16,8 +16,8 @@ export const MapDiv = styled.div`
   grid-row-start: 1;
   grid-row-end: 4;
   display: grid;
-  grid-template-columns: repeat(20, 1fr);
-  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(30, 1fr);
+  grid-template-rows: repeat(30, 1fr);
   background: green;
 `;
 
@@ -38,12 +38,12 @@ export const RoomDiv = styled.div`
   grid-row-start: ${props => props.yCoord};
 
   .room {
-    width: 31px;
-    height: 31px;
+    width: 20px;
+    height: 20px;
   }
 
-  height: 45px;
-  width: 45px;
+  height: 30px;
+  width: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,17 +54,20 @@ export const RoomDiv = styled.div`
   align-items: center;
   justify-content: center;
   }
+      .vertical {
+        width: 7px;
+        height: 5px;
+      }
 
-  .connector {
-    height: 6.5px;
-    width: 7.5px;
-    
-  }
+      .horizontal {
+        height: 7px;
+        width: 5px;
+      }
 `;
 
 export const EmptyDirection = styled.div`
-  height: 6.5px;
-  width: 6.5px;
+  height: 5px;
+  width: 5px;
   background-color: transparent;
 `
 
@@ -109,20 +112,6 @@ export const ChatListDiv = styled.div`
     display: flex;
     flex-flow: column nowrap;
     overflow-y: scroll;
-`;
-
-export const ChatP = styled.p`
-`;
-
-export const ChatDiv = `
-`;
-
-`;
-
-export const ChatListDiv = styled.div`
-    display: flex;
-    flex-flow: column nowrap;
-    overflow-y: scroll;
     /* flex-grow: 10; */
     width: 90%;
     height: 90%;
@@ -131,7 +120,7 @@ export const ChatListDiv = styled.div`
 `;
 
 export const ChatP = styled.p`
-    width: 100%
+    width: 100%;
 `;
 
 export const ChatDiv = styled.div`
@@ -148,5 +137,5 @@ export const ChatBoxDiv = styled.div`
 `;
 
 export const ChatInput = styled.input`
-    width: 98%
+    width: 98%;
 `;
