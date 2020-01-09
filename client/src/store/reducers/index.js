@@ -147,7 +147,6 @@ export const reducer = (state = initialState, action) =>
                 error: "",
             }
         case MOVE_SUCCESS:
-            console.log('action.payload.data', action.payload.data)
             return {
                 ...state,
                 isLoading: false,

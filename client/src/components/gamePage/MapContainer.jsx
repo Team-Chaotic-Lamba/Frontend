@@ -16,6 +16,8 @@ const MapContainer = _ => {
         playerCoords = playerCoords.split(', ')
     }
 
+    const exploredRooms = state.exploredRooms
+
     return (
         <MapDiv>
             {!state.isLoadingRooms && !state.isLoadingPlayer &&
