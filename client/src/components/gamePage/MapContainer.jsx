@@ -11,7 +11,7 @@ const MapContainer = _ => {
     { title: "Hot Laboratory", description: "This laboratory is hot, you begin sweating instantly.", coords: "[18, 15]", n_to: "[18,14]", s_to: null, e_to: null, w_to: [17, 14] },
     { title: "Hot Laboratory", description: "This laboratory is hot, you begin sweating instantly.", coords: "[17, 15]", n_to: null, s_to: null, e_to: [19, 14], w_to: null }]
 
-    console.log(state.allRooms)
+    // console.log(state.allRooms)
 
     return (
         <MapDiv>

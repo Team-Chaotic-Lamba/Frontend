@@ -107,10 +107,10 @@ export const reducer = (state = initialState, action) =>
                 isLoading: false,
                 // exploredRooms: action.payload.visited-rooms-ids,
                 currentRoom: {
-                    title: action.payload.title,
-                    description: action.payload.description,
-                    players: action.payload.players,
-                    coords: action.payload.coords,
+                    title: action.payload.data.title,
+                    description: action.payload.data.description,
+                    players: action.payload.data.players,
+                    coords: action.payload.data.coords,
                 },
                 error: "",
             }
@@ -150,9 +150,9 @@ export const reducer = (state = initialState, action) =>
                 ...state,
                 isLoading: false,
                 currentRoom: {
-                    title: action.payload.title,
-                    description: action.payload.description,
-                    players: action.payload.players
+                    title: action.payload.data.title,
+                    description: action.payload.data.description,
+                    players: action.payload.data.players
                 },
                 error: "",
             }
