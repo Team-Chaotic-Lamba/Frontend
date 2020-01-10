@@ -148,10 +148,10 @@ export const reducer = (state = initialState, action) =>
                 error: "",
             }
         case MOVE_SUCCESS:
-            console.log('action.payload.data', action.payload.data)
             return {
                 ...state,
                 isLoading: false,
+                exploredRooms: action.payload.data.visited_room_ids,
                 currentRoom: {
                     title: action.payload.data.title,
                     description: action.payload.data.description,
