@@ -100,6 +100,7 @@ export const reducer = (state = initialState, action) =>
             return {
                 ...state,
                 isLoadingPlayer: false,
+                username: action.payload.data.name,
                 exploredRooms: action.payload.data.visited_room_ids,
                 currentRoom: {
                     title: action.payload.data.title,

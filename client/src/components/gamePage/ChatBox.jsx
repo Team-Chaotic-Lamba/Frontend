@@ -9,11 +9,12 @@ const ChatBox = _ =>
     const [chat, setChat] = useState('')
     const handleTextChange = e => {
         if (e.keyCode === 13) {
+            console.log(chat)
             const payload = {
                 username: state.username,
                 message: chat
             };
-            axiosWithAuth("https://teamchaotic.herokuapp.com/api/say/", payload);
+            axiosWithAuth().post("http://localhost:8000/api/adv/say/", payload);
         } else {
             setChat(e.target.value)
         }
