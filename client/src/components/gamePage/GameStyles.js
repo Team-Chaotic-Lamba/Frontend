@@ -32,6 +32,21 @@ export const ConnectImgHorizontal = styled.img`
     /* left: 50%; */
     top: 0;
 `
+export const PlayerDiv = styled.div`
+  grid-column-start: ${props => props.xCoord};
+  grid-row-start: ${props => props.yCoord};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .player {
+    height: 15px;
+    width: 15px;
+    background: yellow;
+    z-index: 10;
+    border-radius: 100%;
+  }
+`
 
 export const RoomDiv = styled.div`
     grid-column-start: ${props => props.xCoord};
@@ -101,12 +116,18 @@ export const DescriptionDiv = styled.div`
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-between;
-    background: blue;
+    background: black;
     grid-column-start: 4;
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 2;
-    color: white;
+    color: yellow;
+    padding: 5px;
+`;
+
+export const RoomH3 = styled.h3`
+    font-weight: bold;
+    font-size: 20px;
 `;
 
 

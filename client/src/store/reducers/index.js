@@ -24,30 +24,25 @@ import {
 const initialState = {
     username: "",
     isLoggedIn: false,
+    isLoadingPlayer: false,
+    isLoadingRooms: false,
     exploredRooms: [],
     allRooms: [],
     health: 100,
     items: [],
-    chatMessages: [
-        "John said: Go to ele asdfasfd asdfsadfasdf sadfasdfasdf asfdsafas",
-        "Eli said: four spaces ",
-        "John said: Go to ele",
-        "Eli said: four spaces ",
-        "John said: Go to ele",
-        "Eli said: four spaces ",
-        "John said: Go to ele",
-        "Eli said: four spaces ",
-        "John said: Go to ele",
-        "Eli said: four spaces ",
-        "John said: Go to ele",
-        "Eli said: four spaces "
-    ],
+    chatMessages: [],
     currentRoom: {
         title: "",
         description: "",
         players: [],
         items: [],
-        coords: []
+        coords: [],
+        exits: {
+            n_to: null,
+            s_to: null,
+            e_to: null,
+            w_to: null
+        }
     },
 }
 
@@ -98,45 +93,52 @@ export const reducer = (state = initialState, action) =>
         case INITIALIZE_START:
             return {
                 ...state,
-                isLoading: true,
+                isLoadingPlayer: true,
                 error: "",
             }
         case INITIALIZE_SUCCESS:
             return {
                 ...state,
-                isLoading: false,
+                isLoadingPlayer: false,
+                username: action.payload.data.name,
                 exploredRooms: action.payload.data.visited_room_ids,
                 currentRoom: {
                     title: action.payload.data.title,
                     description: action.payload.data.description,
                     players: action.payload.data.players,
                     coords: action.payload.data.coords,
+                    exits: {
+                        n_to: action.payload.data.n_to,
+                        s_to: action.payload.data.s_to,
+                        e_to: action.payload.data.e_to,
+                        w_to: action.payload.data.w_to,
+                    }
                 },
                 error: "",
             }
         case INITIALIZE_FAIL:
             return {
                 ...state,
-                isLoading: false,
+                isLoadingPlayer: false,
                 error: action.payload,
             }
         case ROOMS_START:
             return {
                 ...state,
-                isLoading: true,
+                isLoadingRooms: true,
                 error: "",
             }
         case ROOMS_SUCCESS:
             return {
                 ...state,
-                isLoading: false,
+                isLoadingRooms: false,
                 allRooms: action.payload.data,
                 error: "",
             }
         case ROOMS_FAIL:
             return {
                 ...state,
-                isLoading: false,
+                isLoadingRooms: false,
                 error: action.payload
             }
         case MOVE_START:
@@ -149,10 +151,18 @@ export const reducer = (state = initialState, action) =>
             return {
                 ...state,
                 isLoading: false,
+                exploredRooms: action.payload.data.visited_room_ids,
                 currentRoom: {
                     title: action.payload.data.title,
                     description: action.payload.data.description,
-                    players: action.payload.data.players
+                    players: action.payload.data.players,
+                    coords: action.payload.data.coords,
+                    exits: {
+                        n_to: action.payload.data.n_to,
+                        s_to: action.payload.data.s_to,
+                        e_to: action.payload.data.e_to,
+                        w_to: action.payload.data.w_to,
+                    }
                 },
                 error: "",
             }
@@ -172,7 +182,7 @@ export const reducer = (state = initialState, action) =>
             return {
                 ...state,
                 isLoading: false,
-                chatMessages: [...state.chatMessages, action.payload],
+                chatMessages: [...state.chatMessages, `${action.payload.name} said: ${action.payload.message}`],
                 error: "",
             }
         default:

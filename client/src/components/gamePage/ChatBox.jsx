@@ -13,7 +13,8 @@ const ChatBox = _ =>
                 username: state.username,
                 message: chat
             };
-            axiosWithAuth("https://teamchaotic.herokuapp.com/api/say/", payload);
+            axiosWithAuth().post("https://teamchaotic.herokuapp.com/api/adv/say/", payload);
+            setChat('')
         } else {
             setChat(e.target.value)
         }
