@@ -151,6 +151,7 @@ export const reducer = (state = initialState, action) =>
             return {
                 ...state,
                 isLoading: false,
+                exploredRooms: action.payload.data.visited_room_ids,
                 currentRoom: {
                     title: action.payload.data.title,
                     description: action.payload.data.description,
