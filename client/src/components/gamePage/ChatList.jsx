@@ -19,6 +19,11 @@ const ChatList = _ =>
             dispatch(subscribeToChats(data))
         });
 
+        return _ =>
+        {
+            pusher.disconnect()
+        }
+
     }, [])
 
     return (
